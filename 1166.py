@@ -9,16 +9,26 @@ import time
 print("WSR-1166DHPL2(v2) 2.03 インストール & 自動設定スクリプト")
 print("> adminのパスワードを入力してEnterキーを押下してください。")
 password = input()
-print("> ローカルの1166のファームウェアのフルパスを入力してEnterキーを押下してください。")
-print("> (何も入力せずにEnter押下でデフォルト値が使用されます。)")
-print("> (デフォルト値: C:\\BUFFALO\\wsr1166dhpl2v2-203\\wsr-1166dhpl2v2-203)")
+# print("> ローカルの1166のファームウェアのフルパスを入力してEnterキーを押下してください。")
+print("> 1166のファームウェアを選択してEnterキーを押下してください。")
+print("> [1] WSR-1166DHPL2 v1 1.09")
+print("> [2] WSR-1166DHPL2 v2 2.03")
+
+# print("> (何も入力せずにEnter押下でデフォルト値が使用されます。)")
+# print("> (デフォルト値: C:\\BUFFALO\\wsr1166dhpl2v2-203\\wsr-1166dhpl2v2-203)")
 firmware_file_path = input()
-if firmware_file_path == "":
+if firmware_file_path == "1":
+    firmware_file_path = "C:\\BUFFALO\\wsr1166dhpl2-109\\wsr-1166dhpl2-109"
+elif firmware_file_path == "2":
     firmware_file_path = "C:\\BUFFALO\\wsr1166dhpl2v2-203\\wsr-1166dhpl2v2-203"
+
+# if firmware_file_path == "":
+#     firmware_file_path = "C:\\BUFFALO\\wsr1166dhpl2v2-203\\wsr-1166dhpl2v2-203"
 
 # WebDriverの初期化（Chromeの場合）
 # driver_path = "C:/Users/yuki/AppData/Local/Google/Chrome/Application/chromedriver"
-driver_path = "C:\\chromedriver-win64\\chromedriver.exe"
+# driver_path = "C:\\chromedriver-win64\\chromedriver.exe"
+driver_path = "./chromedriver.exe"
 driver = webdriver.Chrome(service=ChromeService(driver_path))
 # driver = webdriver.Chrome()
 # driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
