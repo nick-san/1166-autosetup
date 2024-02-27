@@ -15,7 +15,7 @@ jobs:
       # Pythonのセットアップを行いますわ
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.x' # 使用するPythonのバージョンの範囲または正確なバージョンを、SemVerのバージョン範囲の構文を使用して指定しますわ
+          python-version: '3.11' # 使用するPythonのバージョンの範囲または正確なバージョンを、SemVerのバージョン範囲の構文を使用して指定しますわ
           architecture: 'x64' # オプションでx64またはx86を指定しますわ。指定がない場合はデフォルトでx64になりますわ
 
       # Pythonスクリプトをスタンドアロンのexeにビルドしますわ
